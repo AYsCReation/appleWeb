@@ -1,0 +1,162 @@
+
+<%- include('../partials/navbar') %>
+<script>
+    // JavaScript code to read the query parameter and display the popup message
+    window.onload = function() {
+      const urlParams = new URLSearchParams(window.location.search);
+      const message = urlParams.get('message');
+      if (message) {
+        alert(decodeURIComponent(message));
+      }
+    };
+    // Setting a value in local storage
+
+
+// Retrieving the value from local storage
+
+window.myGlobalBoolean = false;
+
+
+  </script>
+<!-- Breadcrumb Start -->
+<div class="container-fluid">
+    <div class="row px-xl-5">
+        <div class="col-12">
+            <nav class="breadcrumb bg-light mb-30">
+             <h1 class="text-center"> Your Cart</h1>
+            </nav>
+        </div>
+    </div>
+</div>
+<!-- Breadcrumb End -->
+
+
+<!-- Shop Detail Start -->
+<div class="container-fluid pb-5">
+    <% for(let cart of cartproducts){ %>
+    <div class="row px-xl-5">
+        <div class="col-lg-5 mb-30">
+            <div id="product-carousel" class="carousel slide" data-ride="carousel">
+                <div class="carousel-inner bg-light">
+                    <div class="carousel-item active">
+                        <img class="w-100 h-100" src="<%= cart.imgsrc[0] %>" alt="Image">
+                    </div>
+                    <div class="carousel-item">
+                        <img class="w-100 h-100" src="<%= cart.imgsrc[1] %>" alt="Image">
+                    </div>
+                    <div class="carousel-item">
+                        <img class="w-100 h-100" src="<%= cart.imgsrc[2] %>" alt="Image">
+                    </div>
+                    
+                </div>
+                <a class="carousel-control-prev" href="#product-carousel" data-slide="prev">
+                    <i class="fa fa-2x fa-angle-left text-dark"></i>
+                </a>
+                <a class="carousel-control-next" href="#product-carousel" data-slide="next">
+                    <i class="fa fa-2x fa-angle-right text-dark"></i>
+                </a>
+            </div>
+        </div>
+
+        <div class="col-lg-7 h-auto mb-30">
+            <div class="h-100 bg-light p-30">
+                <h3><%= cart.name %></h3>
+                <div class="d-flex mb-3">
+                    <div class="text-primary mr-2">
+                        <small class="fas fa-star"></small>
+                        <small class="fas fa-star"></small>
+                        <small class="fas fa-star"></small>
+                        <small class="fas fa-star-half-alt"></small>
+                        <small class="far fa-star"></small>
+                    </div>
+                    <small class="pt-1">(29 Reviews)</small>
+                </div>
+                <h3 class="font-weight-semi-bold mb-4"><%= cart.price %> rs</h3>
+                <p class="mb-4"><%= cart.name %></p>
+                <p class="mb-4">Ram: <%= cart.specification.ram %><br>
+                   Brand : <%= cart.specification.brand %><br>
+                    Model Name: <%= cart.specification.ModelName %><br>
+                    NSP : <%= cart.specification.NSP %><br>
+                    OS : <%= cart.specification.OS %><br>
+                    Cellular Technology : <%= cart.specification.CellularTechnology %><br>
+                   </p>
+                   <h4 class="font-weight-semi-bold mb-4" >Description</h4>
+                   <p class="mb-4"> <%= cart.description %></p>
+             <a class="text-decoration-none"
+            href="/products/cart/<%= cart._id %>">
+            <button class="btn btn-primary px-3"><i class="fa fa-minus-circle mr-1"></i> Remove from Cart</button>
+        </a> 
+            </div>
+
+        </div>
+    </div>
+    <% } %>
+
+
+    <button class="btn btn-primary px-3 <%= session %> show-modal"><i class="fa fa-check-square mr-1 "></i> Checkout</button>
+
+<div class="modalll hidden">
+    <button class="close-modal">&times;</button>
+    <h1>Your CheckOut Details</h1>
+    <p class="text-center">
+        <% if(user){ %>
+    <h4>Username : <%= user.username %> </h4>
+    <h4>Email :<%= user.email %> </h4>
+    <h4>Number :<%= user.number %> </h4>
+<% for(let cart of cartproducts) {%>
+    <h4>Item : <%= cart.name  %></h4>
+    <h4>Price : <%= cart.price  %></h4>
+    <% } %>
+    <% }else { %>
+        <h2>Do log in First</h2> <a href="/login">login</a>
+        <% } %>
+    </p>
+  </div>
+  <div class="overlay hidden"></div>
+
+ 
+</div>
+<script>
+    
+const modal = document.querySelector('.modalll');
+const overlay = document.querySelector('.overlay');
+const btnCloseModal = document.querySelector('.close-modal');
+const btnsOpenModal = document.querySelector('.show-modal');
+
+const openModal = function (e) {
+ 
+    if(btnsOpenModal.classList.contains('true')){
+  modal.classList.remove('hidden');
+  overlay.classList.remove('hidden');
+  console.log("opening")
+  window.scrollTo({
+    top: 0,
+    behavior: 'smooth' // Use smooth scrolling behavior for a smooth transition
+  });
+}else{
+    window.location.href = '/login';
+    alert("Please Login First to CHECKOUT");
+}
+};
+
+const closeModal = function (e) {
+  
+  modal.classList.add('hidden');
+  overlay.classList.add('hidden');
+};
+
+  btnsOpenModal.addEventListener('click', openModal);
+
+btnCloseModal.addEventListener('click', closeModal);
+overlay.addEventListener('click', closeModal);
+
+document.addEventListener('keydown', function (e) {
+  // console.log(e.key);
+
+  if (e.key === 'Escape' && !modal.classList.contains('hidden')) {
+    closeModal();
+  }
+});
+</script>
+
+<%- include('../partials/footer') %>

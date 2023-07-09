@@ -1,0 +1,48 @@
+[{
+  "_id": {
+    "$oid": "649caf38dcd1a9e7e0e16f1b"
+  },
+  "username": "ayushm850",
+  "password": "12345678",
+  "cpassword": "12345678",
+  "email": "ayushm850@gmail.com",
+  "number": 989888877,
+  "session": false,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "649caf38dcd1a9e7e0e16f1c"
+  },
+  "username": "jatinodude",
+  "password": "12345678",
+  "cpassword": "12345678",
+  "email": "jatin@gmail.com",
+  "number": 989888877,
+  "session": false,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "649caf38dcd1a9e7e0e16f1d"
+  },
+  "username": "vaibhavi",
+  "password": "12345678",
+  "cpassword": "12345678",
+  "email": "vaibhavi@gmail.com",
+  "number": 989888877,
+  "session": false,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "649caf38dcd1a9e7e0e16f1e"
+  },
+  "username": "viratk",
+  "password": "12345678",
+  "cpassword": "12345678",
+  "email": "virat@gmail.com",
+  "number": 989888877,
+  "session": false,
+  "__v": 0
+}]

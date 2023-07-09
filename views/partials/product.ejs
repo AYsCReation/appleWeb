@@ -1,0 +1,272 @@
+    <!-- Products Start -->
+    <div class="container-fluid pt-5 pb-3">
+        <h2 class="section-title position-relative text-uppercase mx-xl-5 mb-4"><span class="bg-secondary pr-3">Featured
+                Products</span></h2>
+        <div class="row px-xl-5">
+            <div class="col-lg-3 col-md-4 col-sm-6 pb-1">
+                <div class="product-item bg-light mb-4">
+                    <div class="product-img position-relative overflow-hidden">
+                        <img class="img-fluid w-100" src="<%= Products[0].imgsrc[1] %>" alt="">
+                        <div class="product-action">
+                            <a class="btn btn-outline-dark "
+                                href="../products/<%= Products[0]._id %>"><i
+                                    class="fa fa-eye">View</i></a>
+                                    <a class="btn btn-outline-dark "
+                                    href="../products/<%= Products[0]._id %>/fav"><i
+                                        class="fa fa-heart">Add to favs</i></a>
+                            <!-- <a class="btn btn-outline-dark btn-square" href=""><i class="far fa-heart"></i></a>
+                            <a class="btn btn-outline-dark btn-square" href=""><i class="fa fa-sync-alt"></i></a>
+                            <a class="btn btn-outline-dark btn-square" href=""><i class="fa fa-"></i></a> -->
+                        </div>
+                    </div>
+                    <div class="text-center py-4">
+                        <a class="h6 text-decoration-none text-truncate" href=""><%= Products[0].name %></a>
+                        <div class="d-flex align-items-center justify-content-center mt-2">
+                            <h5><%= Products[0].price %></h5>
+                            <h6 class="text-muted ml-2"><del><%= Products[0].price +10000 %></del></h6>
+                        </div>
+                        <div class="d-flex align-items-center justify-content-center mb-1">
+                            <small class="fa fa-star text-primary mr-1"></small>
+                            <small class="fa fa-star text-primary mr-1"></small>
+                            <small class="fa fa-star text-primary mr-1"></small>
+                            <small class="fa fa-star text-primary mr-1"></small>
+                            <small class="fa fa-star text-primary mr-1"></small>
+                            <small>(29)</small>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-4 col-sm-6 pb-1">
+                <div class="product-item bg-light mb-4">
+                    <div class="product-img position-relative overflow-hidden">
+                        <img class="img-fluid w-100" src="<%= Products[1].imgsrc[0] %>" alt="">
+                        <div class="product-action">
+                            <a class="btn btn-outline-dark "
+                            href="../products/<%= Products[1]._id %>"><i
+                                class="fa fa-eye">View</i></a>
+                                <a class="btn btn-outline-dark "
+                                href="../products/<%= Products[1]._id %>/fav"><i
+                                    class="fa fa-heart">Add to favs</i></a>
+                            <!-- <a class="btn btn-outline-dark btn-square" href=""><i class="far fa-heart"></i></a>
+                            <a class="btn btn-outline-dark btn-square" href=""><i class="fa fa-sync-alt"></i></a>
+                            <a class="btn btn-outline-dark btn-square" href=""><i class="fa fa-"></i></a> -->
+                        </div>
+                    </div>
+                    <div class="text-center py-4">
+                        <a class="h6 text-decoration-none text-truncate" href=""><%= Products[1].name %></a>
+                        <div class="d-flex align-items-center justify-content-center mt-2">
+                            <h5><%= Products[1].price %></h5>
+                            <h6 class="text-muted ml-2"><del><%= Products[1].price +10000 %></del></h6>
+                        </div>
+                        <div class="d-flex align-items-center justify-content-center mb-1">
+                            <small class="fa fa-star text-primary mr-1"></small>
+                            <small class="fa fa-star text-primary mr-1"></small>
+                            <small class="fa fa-star text-primary mr-1"></small>
+                            <small class="fa fa-star text-primary mr-1"></small>
+                            <small class="fa fa-star-half-alt text-primary mr-1"></small>
+                            <small>(25)</small>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-4 col-sm-6 pb-1">
+                <div class="product-item bg-light mb-4">
+                    <div class="product-img position-relative overflow-hidden">
+                        <img class="img-fluid w-100" src="<%= Products[2].imgsrc[2] %>" alt="">
+                        <div class="product-action">
+                            <a class="btn btn-outline-dark "
+                            href="../products/<%= Products[2]._id %>"><i
+                                class="fa fa-eye">View</i></a>
+                                <a class="btn btn-outline-dark "
+                                href="../products/<%= Products[2]._id %>/fav"><i
+                                    class="fa fa-heart">Add to favs</i></a>
+                            <!-- <a class="btn btn-outline-dark btn-square" href=""><i class="far fa-heart"></i></a>
+                            <a class="btn btn-outline-dark btn-square" href=""><i class="fa fa-sync-alt"></i></a>
+                            <a class="btn btn-outline-dark btn-square" href=""><i class="fa fa-"></i></a> -->
+                        </div>
+                    </div>
+                    <div class="text-center py-4">
+                        <a class="h6 text-decoration-none text-truncate" href=""><%= Products[2].name %></a>
+                        <div class="d-flex align-items-center justify-content-center mt-2">
+                            <h5><%= Products[2].price %></h5>
+                            <h6 class="text-muted ml-2"><del><%= Products[2].price +10000 %></del></h6>
+                        </div>
+                        <div class="d-flex align-items-center justify-content-center mb-1">
+                            <small class="fa fa-star text-primary mr-1"></small>
+                            <small class="fa fa-star text-primary mr-1"></small>
+                            <small class="fa fa-star text-primary mr-1"></small>
+                            <small class="fa fa-star-half-alt text-primary mr-1"></small>
+                            <small class="far fa-star text-primary mr-1"></small>
+                            <small>(20)</small>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-4 col-sm-6 pb-1">
+                <div class="product-item bg-light mb-4">
+                    <div class="product-img position-relative overflow-hidden">
+                        <img class="img-fluid w-100" src="<%= Products[3].imgsrc[2] %>" alt="">
+                        <div class="product-action">
+                            <a class="btn btn-outline-dark "
+                            href="../products/<%= Products[3]._id %>"><i
+                                class="fa fa-eye">View</i></a>
+                                <a class="btn btn-outline-dark "
+                                href="../products/<%= Products[3]._id %>/fav"><i
+                                    class="fa fa-heart">Add to favs</i></a>
+                            <!-- <a class="btn btn-outline-dark btn-square" href=""><i class="far fa-heart"></i></a>
+                            <a class="btn btn-outline-dark btn-square" href=""><i class="fa fa-sync-alt"></i></a>
+                            <a class="btn btn-outline-dark btn-square" href=""><i class="fa fa-"></i></a> -->
+                        </div>
+                    </div>
+                    <div class="text-center py-4">
+                        <a class="h6 text-decoration-none text-truncate" href=""><%= Products[3].name %></a>
+                        <div class="d-flex align-items-center justify-content-center mt-2">
+                            <h5><%= Products[3].price %></h5>
+                            <h6 class="text-muted ml-2"><del><%= Products[3].price +10000 %></del></h6>
+                        </div>
+                        <div class="d-flex align-items-center justify-content-center mb-1">
+                            <small class="fa fa-star text-primary mr-1"></small>
+                            <small class="fa fa-star text-primary mr-1"></small>
+                            <small class="fa fa-star text-primary mr-1"></small>
+                            <small class="far fa-star text-primary mr-1"></small>
+                            <small class="far fa-star text-primary mr-1"></small>
+                            <small>(31)</small>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-4 col-sm-6 pb-1">
+                <div class="product-item bg-light mb-4">
+                    <div class="product-img position-relative overflow-hidden">
+                        <img class="img-fluid w-100" src="<%= Products[4].imgsrc[0] %>" alt="">
+                        <div class="product-action">
+                            <a class="btn btn-outline-dark "
+                                href="../products/<%= Products[4]._id %>"><i
+                                    class="fa fa-eye">View</i></a>
+                                    <a class="btn btn-outline-dark "
+                                    href="../products/<%= Products[4]._id %>/fav"><i
+                                        class="fa fa-heart">Add to favs</i></a>
+                            <!-- <a class="btn btn-outline-dark btn-square" href=""><i class="far fa-heart"></i></a>
+                            <a class="btn btn-outline-dark btn-square" href=""><i class="fa fa-sync-alt"></i></a>
+                            <a class="btn btn-outline-dark btn-square" href=""><i class="fa fa-"></i></a> -->
+                        </div>
+                    </div>
+                    <div class="text-center py-4">
+                        <a class="h6 text-decoration-none text-truncate" href=""><%= Products[4].name %></a>
+                        <div class="d-flex align-items-center justify-content-center mt-2">
+                            <h5><%= Products[4].price %></h5>
+                            <h6 class="text-muted ml-2"><del><%= Products[4].price +10000 %></del></h6>
+                        </div>
+                        <div class="d-flex align-items-center justify-content-center mb-1">
+                            <small class="fa fa-star text-primary mr-1"></small>
+                            <small class="fa fa-star text-primary mr-1"></small>
+                            <small class="fa fa-star text-primary mr-1"></small>
+                            <small class="fa fa-star text-primary mr-1"></small>
+                            <small class="fa fa-star text-primary mr-1"></small>
+                            <small>(30)</small>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-4 col-sm-6 pb-1">
+                <div class="product-item bg-light mb-4">
+                    <div class="product-img position-relative overflow-hidden">
+                        <img class="img-fluid w-100" src="<%= Products[5].imgsrc[0] %>" alt="">
+                        <div class="product-action">
+                            <a class="btn btn-outline-dark "
+                            href="../products/<%= Products[5]._id %>"><i
+                                class="fa fa-eye">View</i></a>
+                                <a class="btn btn-outline-dark "
+                                href="../products/<%= Products[5]._id %>/fav"><i
+                                    class="fa fa-heart">Add to favs</i></a>
+                            <!-- <a class="btn btn-outline-dark btn-square" href=""><i class="far fa-heart"></i></a>
+                            <a class="btn btn-outline-dark btn-square" href=""><i class="fa fa-sync-alt"></i></a>
+                            <a class="btn btn-outline-dark btn-square" href=""><i class="fa fa-"></i></a> -->
+                        </div>
+                    </div>
+                    <div class="text-center py-4">
+                        <a class="h6 text-decoration-none text-truncate" href=""><%= Products[5].name %></a>
+                        <div class="d-flex align-items-center justify-content-center mt-2">
+                            <h5><%= Products[5].price %></h5>
+                            <h6 class="text-muted ml-2"><del><%= Products[5].price +10000 %></del></h6>
+                        </div>
+                        <div class="d-flex align-items-center justify-content-center mb-1">
+                            <small class="fa fa-star text-primary mr-1"></small>
+                            <small class="fa fa-star text-primary mr-1"></small>
+                            <small class="fa fa-star text-primary mr-1"></small>
+                            <small class="fa fa-star text-primary mr-1"></small>
+                            <small class="fa fa-star-half-alt text-primary mr-1"></small>
+                            <small>(22)</small>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-4 col-sm-6 pb-1">
+                <div class="product-item bg-light mb-4">
+                    <div class="product-img position-relative overflow-hidden">
+                        <img class="img-fluid w-100" src="<%= Products[6].imgsrc[0] %>" alt="">
+                        <div class="product-action">
+                            <a class="btn btn-outline-dark "
+                            href="../products/<%= Products[6]._id %>"><i
+                                class="fa fa-eye">View</i></a>
+                                <a class="btn btn-outline-dark "
+                                href="../products/<%= Products[6]._id %>/fav"><i
+                                    class="fa fa-heart">Add to favs</i></a>
+                            <!-- <a class="btn btn-outline-dark btn-square" href=""><i class="far fa-heart"></i></a>
+                            <a class="btn btn-outline-dark btn-square" href=""><i class="fa fa-sync-alt"></i></a>
+                            <a class="btn btn-outline-dark btn-square" href=""><i class="fa fa-"></i></a> -->
+                        </div>
+                    </div>
+                    <div class="text-center py-4">
+                        <a class="h6 text-decoration-none text-truncate" href=""><%= Products[6].name %></a>
+                        <div class="d-flex align-items-center justify-content-center mt-2">
+                            <h5><%= Products[6].price %></h5>
+                            <h6 class="text-muted ml-2"><del><%= Products[6].price +10000 %></del></h6>
+                        </div>
+                        <div class="d-flex align-items-center justify-content-center mb-1">
+                            <small class="fa fa-star text-primary mr-1"></small>
+                            <small class="fa fa-star text-primary mr-1"></small>
+                            <small class="fa fa-star text-primary mr-1"></small>
+                            <small class="fa fa-star-half-alt text-primary mr-1"></small>
+                            <small class="far fa-star text-primary mr-1"></small>
+                            <small>(28)</small>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-4 col-sm-6 pb-1">
+                <div class="product-item bg-light mb-4">
+                    <div class="product-img position-relative overflow-hidden">
+                        <img class="img-fluid w-100" src="<%= Products[7].imgsrc[0] %>" alt="">
+                        <div class="product-action">
+                            <a class="btn btn-outline-dark "
+                            href="../products/<%= Products[7]._id %>"><i
+                                class="fa fa-eye">View</i></a>
+                                <a class="btn btn-outline-dark "
+                                href="../products/<%= Products[7]._id %>/fav"><i
+                                    class="fa fa-heart">Add to favs</i></a>
+                            <!-- <a class="btn btn-outline-dark btn-square" href=""><i class="far fa-heart"></i></a>
+                            <a class="btn btn-outline-dark btn-square" href=""><i class="fa fa-sync-alt"></i></a>
+                            <a class="btn btn-outline-dark btn-square" href=""><i class="fa fa-"></i></a> -->
+                        </div>
+                    </div>
+                    <div class="text-center py-4">
+                        <a class="h6 text-decoration-none text-truncate" href=""><%= Products[7].name %></a>
+                        <div class="d-flex align-items-center justify-content-center mt-2">
+                            <h5><%= Products[7].price %></h5>
+                            <h6 class="text-muted ml-2"><del><%= Products[7].price +10000 %></del></h6>
+                        </div>
+                        <div class="d-flex align-items-center justify-content-center mb-1">
+                            <small class="fa fa-star text-primary mr-1"></small>
+                            <small class="fa fa-star text-primary mr-1"></small>
+                            <small class="fa fa-star text-primary mr-1"></small>
+                            <small class="far fa-star text-primary mr-1"></small>
+                            <small class="far fa-star text-primary mr-1"></small>
+                            <small>(24)</small>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Products End -->

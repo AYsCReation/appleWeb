@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<!-- Coding By CodingNepal - codingnepalweb.com -->
+<html lang="en" dir="ltr">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Registration or Sign Up form in HTML CSS | CodingLab</title>
+  <link rel="stylesheet" href="/logRegcss/style.css">
+
+  <style>
+    .error-message {
+      color: red;
+      font-size: 10px;
+      
+    }
+  </style>
+</head>
+
+<body>
+    <script>
+        // JavaScript code to read the query parameter and display the popup message
+        window.onload = function() {
+          const urlParams = new URLSearchParams(window.location.search);
+          const message = urlParams.get('message');
+          if (message) {
+            alert(decodeURIComponent(message));
+          }
+        };
+      </script>
+  <div class="wrapper">
+    <h2>Registration</h2>
+    <form action="/register" method="post" id="registerForm">
+      <div class="input-box">
+        <input type="text" name="username" placeholder="Enter your username" required>
+        <div class="error-message" id="usernameError"></div>
+      </div>
+      <div class="input-box">
+        <input type="password" name="password" id="password" placeholder="Create password" required>
+        <div class="error-message" id="passwordError"></div>
+      </div>
+      <div class="input-box">
+        <input type="password" name="cpassword" id="cpassword" placeholder="Confirm password" required>
+        <div class="error-message" id="cpasswordError"></div>
+      </div>
+      <div class="input-box">
+        <input type="email" name="email" placeholder="Enter your email" required>
+        <div class="error-message" id="emailError"></div>
+      </div>
+      <div class="input-box">
+        <input type="number" name="number" placeholder="Mobile Number" required>
+        <div class="error-message" id="numberError"></div>
+      </div>
+      <div class="policy">
+        <input type="checkbox" id="termsCheckbox" required>
+        <h3>I accept all terms & condition</h3>
+        <div class="error-message" id="termsError"></div>
+      </div>
+      <div class="input-box button">
+        <button type="submit">Register</button>
+      </div>
+      <div class="text">
+        <h3>Already have an account? <a href="/login">Login now</a></h3>
+      </div>
+    </form>
+  </div>
+
+  <script>
+    // JavaScript code for form validation
+    const registerForm = document.getElementById('registerForm');
+    const passwordInput = document.getElementById('password');
+    const cpasswordInput = document.getElementById('cpassword');
+    const termsCheckbox = document.getElementById('termsCheckbox');
+
+    registerForm.addEventListener('submit', function(event) {
+      event.preventDefault();
+      resetErrors();
+
+      if (!validateUsername(registerForm.username.value)) {
+        showError('username', 'Username must be at least 3 characters long');
+      }
+
+      if (!validatePassword(passwordInput.value)) {
+        showError('password', 'Password must be at least 6 characters long');
+      }
+
+      if (passwordInput.value !== cpasswordInput.value) {
+        showError('cpassword', 'Passwords do not match');
+      }
+
+      if (!validateEmail(registerForm.email.value)) {
+        showError('email', 'Invalid email format');
+      }
+
+      if (!validateNumber(registerForm.number.value)) {
+        showError('number', 'Invalid mobile number');
+      }
+
+      if (!termsCheckbox.checked) {
+        showError('terms', 'Please accept the terms and conditions');
+      }
+
+      if (isValidForm()) {
+        registerForm.submit();
+      }
+    });
+
+    function validateUsername(username) {
+      return username.length >= 3;
+    }
+
+    function validatePassword(password) {
+      return password.length >= 6;
+    }
+
+    function validateEmail(email) {
+      // Basic email validation using a regular expression
+      const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+      return emailRegex.test(email);
+    }
+
+    function validateNumber(number) {
+      // Basic number validation using a regular expression
+      const numberRegex = /^\d{10}$/;
+      return numberRegex.test(number);
+    }
+
+    function showError(field, message) {
+      const errorElement = document.getElementById(`${field}Error`);
+      errorElement.textContent = message;
+    }
+
+    function resetErrors() {
+      const errorElements = document.getElementsByClassName('error-message');
+      for (let i = 0; i < errorElements.length; i++) {
+        errorElements[i].textContent = '';
+      }
+    }
+
+    function isValidForm() {
+      const errorElements = document.getElementsByClassName('error-message');
+      for (let i = 0; i < errorElements.length; i++) {
+        if (errorElements[i].textContent !== '') {
+          return false;
+        }
+      }
+      return true;
+    }
+  </script>
+</body>
+
+</html>

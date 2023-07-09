@@ -1,0 +1,91 @@
+
+<%- include('../partials/navbar') %>
+<script>
+    // JavaScript code to read the query parameter and display the popup message
+    window.onload = function() {
+      const urlParams = new URLSearchParams(window.location.search);
+      const message = urlParams.get('message');
+      if (message) {
+        alert(decodeURIComponent(message));
+      }
+    };
+  </script>
+<!-- Breadcrumb Start -->
+<div class="container-fluid ">
+    <div class="row px-xl-5">
+        <div class="col-12" >
+            <nav class="breadcrumb bg-light mb-30">
+                <h1 > Favorite items</h1>
+
+            </nav>
+        </div>
+    </div>
+</div>
+<!-- Breadcrumb End -->
+
+
+<!-- Shop Detail Start -->
+<div class="container-fluid pb-5">
+    <% for(let fav of Favproducts){ %>
+    <div class="row px-xl-5">
+        <div class="col-lg-5 mb-30">
+            <div id="product-carousel" class="carousel slide" data-ride="carousel">
+                <div class="carousel-inner bg-light">
+                    <div class="carousel-item active">
+                        <img class="w-100 h-100" src="<%= fav.imgsrc[0] %>" alt="Image">
+                    </div>
+                    <div class="carousel-item">
+                        <img class="w-100 h-100" src="<%= fav.imgsrc[1] %>" alt="Image">
+                    </div>
+                    <div class="carousel-item">
+                        <img class="w-100 h-100" src="<%= fav.imgsrc[2] %>" alt="Image">
+                    </div>
+                    
+                </div>
+                <a class="carousel-control-prev" href="#product-carousel" data-slide="prev">
+                    <i class="fa fa-2x fa-angle-left text-dark"></i>
+                </a>
+                <a class="carousel-control-next" href="#product-carousel" data-slide="next">
+                    <i class="fa fa-2x fa-angle-right text-dark"></i>
+                </a>
+            </div>
+        </div>
+
+        <div class="col-lg-7 h-auto mb-30">
+            <div class="h-100 bg-light p-30">
+                <h3><%= fav.name %></h3>
+                <div class="d-flex mb-3">
+                    <div class="text-primary mr-2">
+                        <small class="fas fa-star"></small>
+                        <small class="fas fa-star"></small>
+                        <small class="fas fa-star"></small>
+                        <small class="fas fa-star-half-alt"></small>
+                        <small class="far fa-star"></small>
+                    </div>
+                    <small class="pt-1">(29 Reviews)</small>
+                </div>
+                <h3 class="font-weight-semi-bold mb-4"><%= fav.price %> rs</h3>
+                <p class="mb-4"><%= fav.name %></p>
+                <p class="mb-4">Ram: <%= fav.specification.ram %><br>
+                   Brand : <%= fav.specification.brand %><br>
+                    Model Name: <%= fav.specification.ModelName %><br>
+                    NSP : <%= fav.specification.NSP %><br>
+                    OS : <%= fav.specification.OS %><br>
+                    Cellular Technology : <%= fav.specification.CellularTechnology %><br>
+                   </p>
+                   <h4 class="font-weight-semi-bold mb-4" >Description</h4>
+                   <p class="mb-4"> <%= fav.description %></p>
+                <a class="text-decoration-none"
+                href="/products/<%= fav._id %>/cart">
+                <button class="btn btn-primary px-3"><i class="fa fa-shopping-cart mr-1"></i> Add To Cart</button>
+            </a><a class="text-decoration-none"
+            href="/products/fav/<%= fav._id %>">
+            <button class="btn btn-primary px-3"><i class="fa fa-minus-circle mr-1"></i> Remove from Favorite</button>
+        </a> 
+            </div>
+
+        </div>
+    </div>
+    <% } %>
+</div>
+<%- include('../partials/footer') %>
